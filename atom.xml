@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Jonah Liu]]></title>
+  <link href="jonahliu.cf/toolsKit/atom.xml" rel="self"/>
+  <link href="jonahliu.cf/toolsKit/"/>
+  <updated>2022-11-05T23:45:51+01:00</updated>
+  <id>jonahliu.cf/toolsKit/</id>
+  <author>
+    <name><![CDATA[]]></name>
+    
+  </author>
+  <generator uri="http://www.mweb.im/">MWeb</generator>
+  
+  <entry>
+    <title type="html"><![CDATA[单电子转移反应动力学]]></title>
+    <link href="jonahliu.cf/toolsKit/16675877314243.html"/>
+    <updated>2022-11-04T19:48:51+01:00</updated>
+    <id>jonahliu.cf/toolsKit/16675877314243.html</id>
+    <content type="html"><![CDATA[
+<p>我们讨论简单的单电子转移反应：</p>
+<p>\(O+e^- ⇌R\)</p>
+<p>并定义电势\(E\) ，浓度\(C_i\)，扩散系数\(D_i\)与一些基本的动力学参数。</p>
+<p>电化学体系通常受三个主要因素影响：对流（Convention）、扩散（Dif fusion）和界面电荷转移（Kinetics）。在一般的电化学实验中，可以通过实验手段可以抵消对流（Convection）对体系的影响，因而，在进行实验分析是，主要考虑<em>扩散因素</em>与<em>动力学因素</em>其两者对电化学电流的影响。</p>
+<ul>
+<li>
+<p>扩散因素（Diffusion）</p>
+<p>在溶液中，扩散因素对体系的影响可以由Fick's Second Law描述，该定律通常由如下笛卡尔系的方程描述：</p>
+<p>\(\frac{\partial C_i}{\partial t} = D_i \frac{\partial^2 C_i}{\partial x^2}\)</p>
+</li>
+<li>
+<p>动力学因素（Kinetics）</p>
+<p>动力学因素根据机理的不同，电极界面浓度满足不同的关系：</p>
+<ul>
+<li><em>Nernst机理：</em>  \(C_R = C_O * e^{-\frac{E-E_0}{RT}}\)</li>
+<li><em>Bulter-Volmer机理：</em> \(C_R = C_Ok_0 * e^{-\alpha \frac{E-E_0}{RT}}\)</li>
+<li><em>Macus-Hush机理：</em></li>
+</ul>
+</li>
+</ul>
+<h2><a id="%E7%94%B5%E5%8A%BF%E6%89%AB%E6%8F%8F%E6%B3%95" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>电势扫描法</h2>
+<p>电势扫描法中，电位变化满足\(E=E_0+vt\),对其边界值问题进行求解，其解析解为：</p>
+<p>\(I=FAC_O^0(\pi D_O \sigma)^{1/2}\chi(\sigma t)\)</p>
+<p>该方程存在一个极大值：</p>
+<p>\(I=0.446*FAC_O^0(\frac{F D_O }{RT} v)^{1/2}\)</p>
+
+]]></content>
+  </entry>
+  
+</feed>
