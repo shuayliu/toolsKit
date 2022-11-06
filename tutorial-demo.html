@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  关于｜ABOUT - Jonah Liu
+  DEMO版本软件使用教程 - Jonah Liu
   
   </title>
   
@@ -101,24 +101,146 @@
        
 
  <script type="text/javascript">
-	$(function(){
-		var currentURL = 'about.html';
-		currentURL = currentURL.substr(0,currentURL.length-5);
-		$('#menu_item_'+currentURL).addClass('is_active');
-	});
+  $(function(){
+    $('#menu_item_index').addClass('is_active');
+  });
 </script>
 <div class="row">
+  <div class="large-8 medium-8 columns">
+      <div class="markdown-body article-wrap">
+       <div class="article">
+          
+          <h1>DEMO版本软件使用教程</h1>
+     
+        <div class="read-more clearfix">
+          <span class="date">2022/11/06</span>
 
-    <div id="single-page-wrap">
-        <h1>关于｜ABOUT</h1>
+          <span>posted in&nbsp;</span> 
+          
+              <span class="posted-in"><a href='tutorial.html'>教程｜TUTORIAL</a></span>
+           
+         
+          <span class="comments">
+            
 
-        <div class="markdown-body post-page">
-        <p>Jonah Liu's Tools Kit是我在科研过程中开发的一些工具集，主要包含<em>电化学分析工具集（Electrochemical Kinetic Analysis Tools）</em> 和 <em>原子力显微镜分析工具集（AFM Analysis Tools）</em>。</p>
-<p>电化学动力学分析工具（EKAT）在电化学界面电荷转移动力学中的广泛应用，本站所列的工具集主要包含了<em>单电子转移动力学中动力学常数的计算</em>工具，工具的原理与细节请见教程部分。</p>
+            
+          </span>
 
         </div>
-    </div>
-</div>              
+      </div><!-- article -->
+
+      <div class="article-content">
+      <p>基于对<a href="16675877314243.html">单电子转移反应动力学</a>的数理分析，我们可以得到\(\lambda\) 与 \(\Xi\)之间的关系，该关系与动力学常数\(k\)的取值无关，只要满足BV机理，就可以得到一条唯一且确定的标准曲线。</p>
+<p>因此，我们可以通过比较\(\lambda\) vs. \(\Xi\)(本质上是\(\Delta E_p\))与该标准曲线，得到动力学参数（包含在\(\lambda\)的定义中）。</p>
+<p>DEMO版软件基于此原理，讲25C（298K）的标准曲线内置于软件中，通过“查表”得到动力学参数的值。
+<img src="media/16677622081330/16677633331518.jpg" alt="" />
+<strong>请注意，在使用前需先测定扩散系数（Diffusion Coeffision）</strong></p>
+
+
+    
+
+      </div>
+
+      <div class="row">
+        <div class="large-6 columns">
+        <p class="text-left" style="padding:15px 0px;">
+      
+        </p>
+        </div>
+        <div class="large-6 columns">
+      <p class="text-right" style="padding:15px 0px;">
+      
+          <a  href="16675877314243.html" 
+          title="Next Post: 单电子转移反应动力学">单电子转移反应动力学 &raquo;</a>
+      
+      </p>
+        </div>
+      </div>
+      <div class="comments-wrap">
+        <div class="share-comments">
+          
+
+          
+
+          
+        </div>
+      </div>
+    </div><!-- article-wrap -->
+  </div><!-- large 8 -->
+
+
+
+
+ <div class="large-4 medium-4 columns">
+  <div class="hide-for-small">
+    <div id="sidebar" class="sidebar">
+          <div id="site-info" class="site-info">
+            
+                <h1>Jonah Liu</h1>
+                <div class="site-des">Jonah Liu's Tools Kit</div>
+                <div class="social">
+
+
+
+
+
+
+
+
+
+
+
+  <a target="_blank" class="rss" href="atom.xml" title="RSS">RSS</a>
+                
+              	 </div>
+          	</div>
+
+             
+
+              <div id="site-categories" class="side-item ">
+                <div class="side-header">
+                  <h2>Categories</h2>
+                </div>
+                <div class="side-content">
+
+      	<p class="cat-list">
+        
+            <a href="tutorial.html"><strong>教程｜TUTORIAL</strong></a>
+         
+        </p>
+
+
+                </div>
+              </div>
+
+              <div id="site-categories" class="side-item">
+                <div class="side-header">
+                  <h2>Recent Posts</h2>
+                </div>
+                <div class="side-content">
+                <ul class="posts-list">
+	      
+		      
+			      <li class="post">
+			        <a href="tutorial-demo.html">DEMO版本软件使用教程</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="16675877314243.html">单电子转移反应动力学</a>
+			      </li>
+		     
+		   
+		  		</ul>
+                </div>
+              </div>
+        </div><!-- sidebar -->
+      </div><!-- hide for small -->
+</div><!-- large 4 -->
+
+</div><!-- row -->
+
  <div class="page-bottom clearfix">
   <div class="row">
    <p class="copyright">Copyright &copy; 2015
@@ -132,6 +254,9 @@ Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
     </div>
 
 
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
 
   
 
