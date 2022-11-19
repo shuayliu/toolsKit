@@ -4,7 +4,7 @@
   <title><![CDATA[Jonah Liu]]></title>
   <link href="https://jonahliu.cf/toolsKit/atom.xml" rel="self"/>
   <link href="https://jonahliu.cf/toolsKit/"/>
-  <updated>2022-11-13T22:56:05+01:00</updated>
+  <updated>2022-11-19T23:15:23+01:00</updated>
   <id>https://jonahliu.cf/toolsKit/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -13,7 +13,7 @@
   <generator uri="http://www.mweb.im/">MWeb</generator>
   
   <entry>
-    <title type="html"><![CDATA[DEMO版本软件使用教程]]></title>
+    <title type="html"><![CDATA[DEMO版本软件使用教程 | Tutorial for DEMO version]]></title>
     <link href="https://jonahliu.cf/toolsKit/tutorial-demo.html"/>
     <updated>2022-11-06T20:16:48+01:00</updated>
     <id>https://jonahliu.cf/toolsKit/tutorial-demo.html</id>
@@ -28,7 +28,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[单电子转移反应动力学]]></title>
+    <title type="html"><![CDATA[单电子转移反应动力学 | Single Electron Transfer Kinetics]]></title>
     <link href="https://jonahliu.cf/toolsKit/16675877314243.html"/>
     <updated>2022-11-04T19:48:51+01:00</updated>
     <id>https://jonahliu.cf/toolsKit/16675877314243.html</id>
@@ -36,7 +36,7 @@
 <p>我们讨论简单的单电子转移反应：</p>
 <p>\(O+e^- ⇌R\)</p>
 <p>并定义电势\(E\) ，浓度\(C_i\)，扩散系数\(D_i\)与一些基本的动力学参数。</p>
-<p>电化学体系通常受三个主要因素影响：对流（Convention）、扩散（Dif fusion）和界面电荷转移（Kinetics）。在一般的电化学实验中，可以通过实验手段可以抵消对流（Convection）对体系的影响，因而，在进行实验分析是，主要考虑<em>扩散因素</em>与<em>动力学因素</em>其两者对电化学电流的影响。</p>
+<p>电化学体系通常受三个主要因素影响：对流（Convention）、扩散（Diffusion）和界面电荷转移（Kinetics）。在一般的电化学实验中，可以通过实验手段可以抵消对流（Convection）对体系的影响，因而，在进行实验分析是，主要考虑<em>扩散因素</em>与<em>动力学因素</em>其两者对电化学电流的影响。</p>
 <ul>
 <li>
 <p>扩散因素（Diffusion）</p>
@@ -48,16 +48,36 @@
 <p>动力学因素根据机理的不同，电极界面浓度满足不同的关系：</p>
 <ul>
 <li><em>Nernst机理：</em>  \(C_R = C_O * e^{-\frac{E-E_0}{RT}}\)</li>
-<li><em>Bulter-Volmer机理：</em> \(C_R = C_Ok_0 * e^{-\alpha \frac{E-E_0}{RT}}\)</li>
+<li><em>Bulter-Volmer机理：</em> \(C_R = C_Ok_S^{ap} * e^{- \frac{\alpha F }{RT}(E-E_0)}\)</li>
 <li><em>Macus-Hush机理：</em></li>
 </ul>
 </li>
 </ul>
-<h2><a id="%E7%94%B5%E5%8A%BF%E6%89%AB%E6%8F%8F%E6%B3%95" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>电势扫描法</h2>
-<p>电势扫描法中，电位变化满足\(E=E_0+vt\),对其边界值问题进行求解，其解析解为：</p>
-<p>\(I=FAC_O^0(\pi D_O \sigma)^{1/2}\chi(\sigma t)\)</p>
-<p>该方程存在一个极大值：</p>
-<p>\(I=0.446*FAC_O^0(\frac{F D_O }{RT} v)^{1/2}\)</p>
+<p>我们考虑<em>Bulter-Vaolmer</em>机理。</p>
+<h2><a id="%E7%94%B5%E5%8A%BF%E6%89%AB%E6%8F%8F%E6%B3%95%E7%9A%84%E8%A7%A3%E6%9E%90%E8%A7%A3" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>电势扫描法的解析解</h2>
+<p>电势扫描法中，电位变化满足\(E=E_0+vt\)。</p>
+<p>电流则满足:
+\(j=\frac{i_F}{FS}=D\frac{\partial c_A }{\partial x}=k_S^{ap}e^{-\frac{\alpha F}{RT}(E'-E^o)}[c_A-c_B e^{\frac{F}{RT}(E'-E^o)}]\)</p>
+<p>对其边界值问题进行求解<sup class="footnote-ref"><a href="#fn-Ref1" id="fnref-Ref1_ref" data-footnote-ref>1</a></sup>，其经典的法拉第方程的解为：</p>
+<p>\(\Psi_f e^{-\alpha\xi'}/\Lambda=1-\pi^{-1/2}[1+e^{-\xi'}]\int_0^\tau \Psi_f(\tau-\eta)^{-1/2} \text{d}\eta\)</p>
+<p>其中，\(\Psi_f\)为电流的去量纲量，\(\xi'\)为法拉第反应电位的去量纲量，\(\Lambda\)为动力学常数的去量纲量，其表述为：</p>
+<p>\(\Lambda=k_S^{ap}(D \frac{Fv}{RT})^{-1/2}\)</p>
+<p>显然，该方程只与三个参数相关：\(\Psi_f\)，\(\xi'\)，\(\alpha\) 与 \(\Lambda\)。实际的实验体系中，由于电位扫描方式确定，体系的响应电流则只与动力学参数\(\Lambda\)和\(\alpha\)相关。</p>
+<p>实际上，准可逆体系的所有动力学参数基本均与此二参数相关。</p>
+<ul>
+<li>\(i_p=i_p(\text{REV}) K(\Lambda,\alpha)\)</li>
+<li>\(E_p=E_{1/2}-\Xi(\Lambda,\alpha)\frac{RT}{F}\)</li>
+<li>\(E_{p/2}-E_p=\Delta(\Lambda,\alpha)\frac{RT}{F}\)</li>
+</ul>
+<p>既然去量纲后的方程是确定的，那么，<strong>我们便可以将去实验数据在去量纲后与理论曲线比照，因此获得去量纲化时的参数</strong>，特别是动力学参数\(k_S\)。</p>
+<p>当然，这里为了简化计算，近似假设了\(D_O=D_R\)。</p>
+<section class="footnotes" data-footnotes>
+<ol>
+<li id="fn-Ref1">
+<p>L. Nadjo and J.M. Saveant, J. Electroanal. Chem., 48(1973) 113. 当然，本部分内容在A.J. Bard的电化学基础中均有详述。 <a href="#fnref-Ref1_ref" class="footnote-backref" data-footnote-backref aria-label="Back to content">&#8617;<a></p>
+</li>
+</ol>
+</section>
 
 ]]></content>
   </entry>
