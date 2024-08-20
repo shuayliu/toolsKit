@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  DEMO版本软件使用教程 | Tutorial for DEMO version - Shuay Liu's Tools Kit
+  单电子转移反应动力学 | Single Electron Transfer Kinetics - Shuay Liu's Tools Kit
   
   </title>
   
@@ -110,10 +110,10 @@
       <div class="markdown-body article-wrap">
        <div class="article">
           
-          <h1>DEMO版本软件使用教程 | Tutorial for DEMO version</h1>
+          <h1>单电子转移反应动力学 | Single Electron Transfer Kinetics</h1>
      
         <div class="read-more clearfix">
-          <span class="date">2022/11/07</span>
+          <span class="date">2022/11/05</span>
 
           <span>posted in&nbsp;</span> 
           
@@ -130,11 +130,51 @@
       </div><!-- article -->
 
       <div class="article-content">
-      <p>基于对<a href="Single-Electron-Transfer-Kinetics.html">单电子转移反应动力学</a>的数理分析，我们可以得到\(\lambda\) 与 \(\Xi\)之间的关系，该关系与动力学常数\(k\)的取值无关，只要满足BV机理，就可以得到一条唯一且确定的标准曲线。</p>
-<p>因此，我们可以通过比较\(\lambda\) vs. \(\Xi\)(本质上是\(\Delta E_p\))与该标准曲线，得到动力学参数（包含在\(\lambda\)的定义中）。</p>
-<p>DEMO版软件基于此原理，讲25C（298K）的标准曲线内置于软件中，通过“查表”得到动力学参数的值。
-<img src="media/16677622081330/16677633331518.jpg" alt="" />
-<strong>请注意，在使用前需先测定扩散系数（Diffusion Coeffision）</strong></p>
+      <p>我们讨论简单的单电子转移反应：</p>
+<p>\(O+e^- ⇌R\)</p>
+<p>并定义电势\(E\) ，浓度\(C_i\)，扩散系数\(D_i\)与一些基本的动力学参数。</p>
+<p>电化学体系通常受三个主要因素影响：对流（Convention）、扩散（Diffusion）和界面电荷转移（Kinetics）。在一般的电化学实验中，可以通过实验手段可以抵消对流（Convection）对体系的影响，因而，在进行实验分析是，主要考虑<em>扩散因素</em>与<em>动力学因素</em>其两者对电化学电流的影响。</p>
+<ul>
+<li>
+<p>扩散因素（Diffusion）</p>
+<p>在溶液中，扩散因素对体系的影响可以由Fick's Second Law描述，该定律通常由如下笛卡尔系的方程描述：</p>
+<p>\(\frac{\partial C_i}{\partial t} = D_i \frac{\partial^2 C_i}{\partial x^2}\)</p>
+</li>
+<li>
+<p>动力学因素（Kinetics）</p>
+<p>动力学因素根据机理的不同，电极界面浓度满足不同的关系：</p>
+<ul>
+<li><em>Nernst机理：</em>  \(C_R = C_O * e^{-\frac{E-E_0}{RT}}\)</li>
+<li><em>Bulter-Volmer机理：</em> \(C_R = C_Ok_S^{ap} * e^{- \frac{\alpha F }{RT}(E-E_0)}\)</li>
+<li><em>Macus-Hush机理：</em></li>
+</ul>
+</li>
+</ul>
+<p>我们考虑<em>Bulter-Vaolmer</em>机理。</p>
+<h2><a id="%E7%94%B5%E5%8A%BF%E6%89%AB%E6%8F%8F%E6%B3%95%E7%9A%84%E8%A7%A3%E6%9E%90%E8%A7%A3" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>电势扫描法的解析解</h2>
+<p>电势扫描法中，电位变化满足\(E=E_0+vt\)。</p>
+<p>电流则满足:
+\(j=\frac{i_F}{FS}=D\frac{\partial c_A }{\partial x}=k_S^{ap}e^{-\frac{\alpha F}{RT}(E'-E^o)}[c_A-c_B e^{\frac{F}{RT}(E'-E^o)}]\)</p>
+<p>对其边界值问题进行求解<sup class="footnote-ref"><a href="#fn-Ref1" id="fnref-Ref1_ref" data-footnote-ref>1</a></sup>，其经典的法拉第方程的解为：</p>
+<p>\(\Psi_f e^{-\alpha\xi'}/\Lambda=1-\pi^{-1/2}[1+e^{-\xi'}]\int_0^\tau \Psi_f(\tau-\eta)^{-1/2} \text{d}\eta\)</p>
+<p>其中，\(\Psi_f\)为电流的去量纲量，\(\xi'\)为法拉第反应电位的去量纲量，\(\Lambda\)为动力学常数的去量纲量，其表述为：</p>
+<p>\(\Lambda=k_S^{ap}(D \frac{Fv}{RT})^{-1/2}\)</p>
+<p>显然，该方程只与三个参数相关：\(\Psi_f\)，\(\xi'\)，\(\alpha\) 与 \(\Lambda\)。实际的实验体系中，由于电位扫描方式确定，体系的响应电流则只与动力学参数\(\Lambda\)和\(\alpha\)相关。</p>
+<p>实际上，准可逆体系的所有动力学参数基本均与此二参数相关。</p>
+<ul>
+<li>\(i_p=i_p(\text{REV}) K(\Lambda,\alpha)\)</li>
+<li>\(E_p=E_{1/2}-\Xi(\Lambda,\alpha)\frac{RT}{F}\)</li>
+<li>\(E_{p/2}-E_p=\Delta(\Lambda,\alpha)\frac{RT}{F}\)</li>
+</ul>
+<p>既然去量纲后的方程是确定的，那么，<strong>我们便可以将去实验数据在去量纲后与理论曲线比照，因此获得去量纲化时的参数</strong>，特别是动力学参数\(k_S\)。</p>
+<p>当然，这里为了简化计算，近似假设了\(D_O=D_R\)。</p>
+<section class="footnotes" data-footnotes>
+<ol>
+<li id="fn-Ref1">
+<p>L. Nadjo and J.M. Saveant, J. Electroanal. Chem., 48(1973) 113. 当然，本部分内容在A.J. Bard的电化学基础中均有详述。 <a href="#fnref-Ref1_ref" class="footnote-backref" data-footnote-backref aria-label="Back to content">&#8617;<a></p>
+</li>
+</ol>
+</section>
 
 
     
@@ -145,13 +185,13 @@
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
       
+          <a href="tutorial-demo.html" 
+          title="Previous Post: DEMO版本软件使用教程 | Tutorial for DEMO version">&laquo; DEMO版本软件使用教程 | Tutorial for DEMO version</a>
+      
         </p>
         </div>
         <div class="large-6 columns">
       <p class="text-right" style="padding:15px 0px;">
-      
-          <a  href="Single-Electron-Transfer-Kinetics.html" 
-          title="Next Post: 单电子转移反应动力学 | Single Electron Transfer Kinetics">单电子转移反应动力学 | Single Electron Transfer Kinetics &raquo;</a>
       
       </p>
         </div>
